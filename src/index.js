@@ -29,12 +29,12 @@ class CountdownTimer {
         return { days, hours, mins, secs };
     }
 
-    // добавляет ноль к количеству оставшихся минут, часов и секунд, если их меньше, чем 10
+    
     par(value) {
         return String(value).padStart(2, '0');
     }
 
-    // добавляет ноль к количеству оставшихся дней, если их меньше чем 10
+    
     parDays(value) {
         const newDateValue = String(value).padStart(3, "0");
         if (newDateValue[0] === '0') {
@@ -43,7 +43,7 @@ class CountdownTimer {
         return newDateValue;
     }
 
-    // запуск отсчёта времени к дате с this.targetDate
+    
     startTimer() {
         if (this.isActive) {
             return;
@@ -59,7 +59,7 @@ class CountdownTimer {
 
     }
 
-    // функция, которая будет передаваться в setInterval и обновлять данные в html
+    
     updateTimeFields({ days, hours, mins, secs }) {
         this.daysValueField.textContent = days;
         this.hoursValueField.textContent = hours;
@@ -69,6 +69,6 @@ class CountdownTimer {
 }
 
 
-// создаю экземпляр класса, указываю его id в разметке, нужную дату и функцию для выбора нужных элементов в разметке
+
 const timer = new CountdownTimer({selector: '#timer-1', targetDate: new Date('May 28, 2021')});
 timer.startTimer.call(timer);
